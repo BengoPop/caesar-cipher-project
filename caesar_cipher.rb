@@ -4,10 +4,13 @@ def caesar_cipher(string, int_shift_factor)
   input_array = string.split('')
 
   input_array_shifted = input_array.map do |letter|
-    (alphabet.index(letter) + int_shift_factor) % alphabet.length
+    if alphabet.include?(letter.downcase)
+      (alphabet.index(letter) + int_shift_factor) % alphabet.length
+    else
+      letter
+    end
   end
-
-  input_array_shifted.reduce('') { |acc, shifted_letter_index| acc + alphabet[shifted_letter_index] }
+  puts input_array_shifted
 end
 
-puts caesar_cipher('zab', 2)
+puts caesar_cipher('abc !', 1)
