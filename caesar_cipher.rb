@@ -27,4 +27,3 @@ def caesar_cipher(string, int_shift_factor)
   input_hash_shifted = encode_shift_with_case(string, int_shift_factor, alphabet)
   assemble_shifted_string(input_hash_shifted, alphabet)
 end
-puts caesar_cipher('Abc.', 1)
